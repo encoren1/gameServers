@@ -16,6 +16,8 @@ services:
   insurgency:
     image: insurgency:${INSURGENCY_TAG:-latest}
     build: ./insurgency
+      args:
+        INSURGENCY_BASE_TAG: testing
     environment:
       APP_SERVER_NAME: 'Caballito'
       APP_SERVER_PORT: '27018'
@@ -26,5 +28,3 @@ services:
     ports:
       - "27018:27018"
       - "27018:27018/udp"
-    depends_on:
-      - insurgency-base
