@@ -12,6 +12,7 @@ services:
       args:
         APPID: 237410
         APPNAME: insurgency
+        STEAMCMD_TAG: testing
   insurgency:
     image: insurgency:${INSURGENCY_TAG:-latest}
     build: ./insurgency

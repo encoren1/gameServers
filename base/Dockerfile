@@ -1,4 +1,4 @@
-ARG STEAMCMD_TAG
+ARG STEAMCMD_TAG=latest
 FROM my-steamcmd:${STEAMCMD_TAG}
 
 ARG STEAM_USER=anonymous
