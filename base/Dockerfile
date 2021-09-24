@@ -12,8 +12,11 @@ ENV APPNAME $APPNAME
 ENV STEAM_USER $STEAM_USER
 ENV STEAM_PASSWORD $STEAM_PASSWORD
 
-COPY install_appid /bin/install_appid
-COPY merge_config /bin/merge_config
 COPY run_server /bin/run_server
 
+VOLUME ["/home/steam/${APPID}"]
 RUN /bin/install_appid
+
+
+COPY merge_config /bin/merge_config
+COPY install_appid /bin/install_appid
