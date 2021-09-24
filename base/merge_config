@@ -2,7 +2,7 @@
 set -x
 
 
-APP_ROOT=${APPDIR}/${APPNAME}
+APP_ROOT=${HOME}/${APPDIR}/${APPNAME}
 CFG_FROM=${CFG_FROM:-/tmp/${APPNAME}}
 
 

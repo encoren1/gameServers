@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+cd ${HOME}/steamcmd
+
 APP_GAME_NAME=${APPNAME}
 
 /bin/merge_config
@@ -10,13 +12,6 @@ if ! [ "x${APP_SERVER_TOKEN}" = "x" ]; then
 	STEAM_SERVER_TOKEN="+exec autoexec_steamaccount.cfg"
 fi
 
-if [ "$USE_SRCDS" = "true" ]; then
-	if ! [ "x${APP_GAME_NAME}" = "x" ]; then
-		APP_GAME_NAME="-game ${APP_GAME_NAME}"
-	fi
+APP_GAME_NAME="-game ${APP_GAME_NAME}"
 
-	./srcds_run -console ${APP_GAME_NAME} ${APP_SRCDS_FLAGS} -nohltv ${STEAM_SERVER_TOKEN} +maxplayers ${APP_SERVER_MAXPLAYERS} ${APP_SRCDS_FLAGS} +map ${APP_SERVER_MAP} -port ${APP_SERVER_PORT}
-else
-	echo "Unknown Server Startup Usage"
-	exit 1
-fi
+./steamcmd.sh -console ${APP_GAME_NAME} ${APP_SRCDS_FLAGS} -nohltv ${STEAM_SERVER_TOKEN} +maxplayers ${APP_SERVER_MAXPLAYERS} ${APP_SRCDS_FLAGS} +map ${APP_SERVER_MAP} -port ${APP_SERVER_PORT}
