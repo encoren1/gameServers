@@ -37,6 +37,3 @@ RUN set -x \
     && ln -s ${STEAMCMD_DIR}/linux32/steamclient.so ${HOME_DIR}/.steam/sdk32/steamclient.so \
     && ln -s ${STEAMCMD_DIR}/linux32/steamcmd ${STEAMCMD_DIR}/linux32/steam \
     && ln -s ${STEAMCMD_DIR}/steamcmd.sh ${STEAMCMD_DIR}/steam.sh
-
-WORKDIR ${STEAMCMD_DIR}
-VOLUME ${STEAMCMD_DIR}

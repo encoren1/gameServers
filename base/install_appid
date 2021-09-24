@@ -1,8 +1,8 @@
 #!/bin/bash
 
 set -x
-APPDIR="${HOME}/${APPID}"
-STEAMCMD="./steamcmd.sh"
+APPDIR=${HOME}/${APPID}
+STEAMCMD=${HOME}/steamcmd/steamcmd.sh
 
 
 if [ "x${APPID}" = "x" ]; then
@@ -20,7 +20,5 @@ fi
 if ! [ "x${STEAMCMD_OPTS}" = "x" ]; then
 	STEAMCMD_OPTS="\"${STEAMCMD_OPTS}\""
 fi
-
-cd ${STEAMCMD_DIR}
 
 ${STEAMCMD} +login ${STEAM_USER} ${STEAM_PASSWORD} +force_install_dir ${APPDIR} +app_update ${APPID} ${STEAMCMD_OPTS} validate +quit
