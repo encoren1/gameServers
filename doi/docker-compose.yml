@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  doi:
+    image: doi:${tag:-latest}
+    build:
+      context: .
+    environment:
+      APP_SERVER_NAME: 'doiCaballito'
+      APP_SERVER_PORT: '27019'
+      APP_SERVER_MAXPLAYERS: '48'
+      APP_SERVER_MAP: 'ortona'
+    volumes:
+      - ./doi:/tmp/doi
+    ports:
+      - "27019:27019"
+      - "27019:27019/udp"

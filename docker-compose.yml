@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  steamcmd:
+    image: my-steamcmd:${STEAMCMD_TAG:-latest}
+    build:
+      context: ./steamcmd
+  insurgency-base:
+    image: insurgency-base:${INSURGENCY_BASE_TAG:-latest}
+    build:
+      context: ./base
+      args:
+        APPID: 237410
+        APPNAME: insurgency
+  insurgency:
+    image: insurgency:${INSURGENCY_TAG:-latest}
+    build: ./insurgency
+    environment:
+      APP_SERVER_NAME: 'Caballito'
+      APP_SERVER_PORT: '27018'
+      APP_SERVER_MAXPLAYERS: '48'
+      APP_SERVER_MAP: 'tell_coop'
+    volumes:
+      - ./insurgency/cfg:/tmp/insurgency
+    ports:
+      - "27018:27018"
+      - "27018:27018/udp"
+    depends_on:
+      - insurgency-base
+
+volumes:
+  apt-cacher-ng:

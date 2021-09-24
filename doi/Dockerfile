@@ -1,0 +1,19 @@
+FROM doi-base:latest
+
+ENV APPID 462310
+ENV APPDIR /home/steamsrv/462310
+ENV APP_GAME_NAME doi
+ENV APP_SRCDS_FLAGS ""
+ENV APP_SERVER_PORT 27019
+ENV APP_SERVER_MAXPLAYERS 24
+ENV APP_SERVER_MAP ortona
+ENV APP_SERVER_NAME doiServer
+ENV USE_SRCDS true
+
+COPY merge_config /bin/merge_config
+COPY run_server /bin/run_server
+
+EXPOSE ${APP_SERVER_PORT}
+EXPOSE ${APP_SERVER_PORT}/udp
+
+CMD ["/bin/run_server"]
