@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-cd ${HOME}/steamcmd
+cd ${HOME}/${APPID}
 
 APP_GAME_NAME=${APPNAME}
 
@@ -14,4 +14,4 @@ fi
 
 APP_GAME_NAME="-game ${APP_GAME_NAME}"
 
-./steamcmd.sh -console ${APP_GAME_NAME} ${APP_SRCDS_FLAGS} -nohltv ${STEAM_SERVER_TOKEN} +maxplayers ${APP_SERVER_MAXPLAYERS} ${APP_SRCDS_FLAGS} +map ${APP_SERVER_MAP} -port ${APP_SERVER_PORT}
+./srcds_run -console ${APP_GAME_NAME} ${APP_SRCDS_FLAGS} -nohltv ${STEAM_SERVER_TOKEN} +maxplayers ${APP_SERVER_MAXPLAYERS} ${APP_SRCDS_FLAGS} +map ${APP_SERVER_MAP} -port ${APP_SERVER_PORT}
