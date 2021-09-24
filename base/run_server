@@ -1,7 +1,6 @@
 #!/bin/bash
 set -x
 
-cd ${APPDIR}
 APP_GAME_NAME=${APPNAME}
 
 /bin/merge_config
