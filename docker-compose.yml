@@ -11,8 +11,7 @@ services:
       context: ./base
       args:
         APPID: 237410
-        APPNAME: insurgency
-        STEAMCMD_TAG: testing
+        APPNAME: insurgency        
   insurgency:
     image: insurgency:${INSURGENCY_TAG:-latest}
     build:
