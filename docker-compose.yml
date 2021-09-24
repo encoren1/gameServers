@@ -15,7 +15,8 @@ services:
         STEAMCMD_TAG: testing
   insurgency:
     image: insurgency:${INSURGENCY_TAG:-latest}
-    build: ./insurgency
+    build:
+      context: ./insurgency
       args:
         INSURGENCY_BASE_TAG: testing
     environment:
