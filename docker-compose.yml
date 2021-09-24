@@ -27,6 +27,3 @@ services:
       - "27018:27018/udp"
     depends_on:
       - insurgency-base
-
-volumes:
-  apt-cacher-ng:
