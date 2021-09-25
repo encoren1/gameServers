@@ -14,8 +14,4 @@ if [ -f ${APP_ROOT}/cfg/server.cfg ]; then
   sed -i "s/.*hostname.*/hostname \"${APP_SERVER_NAME}\"/" ${APP_ROOT}/cfg/server.cfg
   sed -i "s/.*sv_password.*/sv_password \"${APP_SERVER_PASSWORD}\"/" ${APP_ROOT}/cfg/server.cfg
   sed -i "s/.*rcon_password.*/rcon_password \"${APP_SERVER_RCONPASSWORD}\"/" ${APP_ROOT}/cfg/server.cfg
-else
-  echo "hostname "${APP_SERVER_NAME}" > ${APP_ROOT}/cfg/server.cfg"
-  echo "sv_password "${APP_SERVER_PASSWORD}" >> ${APP_ROOT}/cfg/server.cfg"
-  echo "rcon_password "${APP_SERVER_RCONPASSWORD}" >> ${APP_ROOT}/cfg/server.cfg"
 fi
