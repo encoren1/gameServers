@@ -24,7 +24,7 @@ services:
       APP_SERVER_MAXPLAYERS: '32'
       APP_SERVER_MAP: 'market_coop'
     volumes:
-      - ./insurgency/insurgency/cfg:/tmp/insurgency
+      - ./insurgency/insurgency/:/tmp/insurgency
     ports:
       - "27018:27018"
       - "27018:27018/udp"
