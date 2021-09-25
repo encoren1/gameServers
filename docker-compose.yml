@@ -11,13 +11,11 @@ services:
       context: ./base
       args:
         APPID: 237410
-        APPNAME: insurgency        
+        APPNAME: insurgency
   insurgency:
     image: insurgency:${INSURGENCY_TAG:-latest}
     build:
       context: ./insurgency
-      args:
-        INSURGENCY_BASE_TAG: testing
     environment:
       APP_SERVER_NAME: 'testname'
       APP_SERVER_PASSWORD: 'testpassword'
