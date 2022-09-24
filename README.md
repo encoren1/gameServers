@@ -10,4 +10,10 @@
 
 ##### Build
 
+###### SteamCMD
+
 ``` docker-compose build --force-rm steamcmd ```
+
+###### Base image
+
+``` docker-compose build --force-rm insurgency-base ```
