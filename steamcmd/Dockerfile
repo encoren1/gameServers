@@ -1,5 +1,6 @@
 FROM debian:buster-slim
 ARG STEAM_UID=10000
+ARG DEBIAN_FRONTEND=noninteractive
 
 LABEL mantainer="encore.n1@gmail.com"
 
@@ -8,8 +9,7 @@ ENV HOME_DIR /home/steam
 ENV STEAMCMD_DIR /home/steam/steamcmd
 
 # Install dependencies
-RUN set -x \
-    && dpkg --add-architecture i386 \
+RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get install -y --no-install-recommends --no-install-suggests \
       lib32stdc++6 \
@@ -28,8 +28,7 @@ RUN set -x \
 USER ${USER_NAME}
 
 #Get code
-RUN set -x \
-    && mkdir -p ${STEAMCMD_DIR} \
+RUN mkdir -p ${STEAMCMD_DIR} \
     && curl -s "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar -xzvf - -C ${STEAMCMD_DIR} \
     && cd ${STEAMCMD_DIR} \
     && ./steamcmd.sh +login anonymous +quit \
