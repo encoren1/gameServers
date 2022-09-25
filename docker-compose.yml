@@ -37,7 +37,7 @@ services:
       APP_SERVER_MAXPLAYERS: '128'
       APP_SERVER_MAP: 'market_coop'
     volumes:
-      - ./insurgency/insurgency/:/tmp/insurgency
+      - ./insurgency/config/:/tmp/insurgency
       - ./doi/logs:/home/steam/237410/insurgency/logs      
     ports:
       - "27018:27018"
@@ -56,7 +56,7 @@ services:
       APP_SERVER_MAXPLAYERS: '128'
       APP_SERVER_MAP: 'bastogne'
     volumes:
-      - ./doi/doi/:/tmp/doi
+      - ./doi/config/:/tmp/doi
       - ./doi/logs:/home/steam/462310/doi/logs
     ports:
       - "27019:27019"
