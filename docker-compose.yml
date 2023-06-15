@@ -5,6 +5,7 @@ services:
     image: my-steamcmd:${STEAMCMD_TAG:-latest}
     build:
       context: ./steamcmd
+
   insurgency-base:
     image: insurgency-base:${INSURGENCY_BASE_TAG:-latest}
     depends_on:
@@ -14,6 +15,7 @@ services:
       args:
         APPID: 237410
         APPNAME: insurgency
+
   doi-base:
     image: doi-base:${DOI_BASE_TAG:-latest}
     depends_on:
@@ -23,6 +25,7 @@ services:
       args:
         APPID: 462310
         APPNAME: doi
+
   insurgency:
     image: insurgency:${INSURGENCY_TAG:-latest}
     depends_on:
@@ -37,11 +40,12 @@ services:
       APP_SERVER_MAXPLAYERS: '128'
       APP_SERVER_MAP: 'market_coop'
     volumes:
-      - ./insurgency/config/:/tmp/insurgency
-      - ./doi/logs:/home/steam/237410/insurgency/logs      
+      - ./insurgency/config/:/tmp/insurgency:ro
+      - ./insurgency/logs:/home/steam/237410/insurgency/logs
     ports:
       - "27018:27018"
       - "27018:27018/udp"
+
   doi:
     image: doi:${DOI_TAG:-latest}
     depends_on:
@@ -56,7 +60,7 @@ services:
       APP_SERVER_MAXPLAYERS: '128'
       APP_SERVER_MAP: 'bastogne'
     volumes:
-      - ./doi/config/:/tmp/doi
+      - ./doi/config/:/tmp/doi:ro
       - ./doi/logs:/home/steam/462310/doi/logs
     ports:
       - "27019:27019"

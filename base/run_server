@@ -2,6 +2,7 @@
 set -x
 
 APP_GAME_NAME=${APPNAME}
+APPDIR=${HOME}/${APPID}
 
 /bin/merge_config
 
@@ -9,5 +10,5 @@ if ! [ "x${APP_SERVER_TOKEN}" = "x" ]; then
 	echo "sv_setsteamaccount ${APP_SERVER_TOKEN}" > ${APPDIR}/${APP_GAME_NAME}/cfg/autoexec_steamaccount.cfg
 	STEAM_SERVER_TOKEN="+exec autoexec_steamaccount.cfg"
 fi
-
-${HOME}/${APPID}/srcds_run -game ${APP_GAME_NAME} ${APP_SRCDS_FLAGS} -nohltv ${STEAM_SERVER_TOKEN} +maxplayers ${APP_SERVER_MAXPLAYERS} +map ${APP_SERVER_MAP} -port ${APP_SERVER_PORT} ${APP_EXTRA_ARGS}
+cd ${APPDIR}
+${APPDIR}/srcds_run -game ${APP_GAME_NAME} ${APP_SRCDS_FLAGS} -nohltv ${STEAM_SERVER_TOKEN} +maxplayers ${APP_SERVER_MAXPLAYERS} +map ${APP_SERVER_MAP} -port ${APP_SERVER_PORT} ${APP_EXTRA_ARGS}
