@@ -8,8 +8,6 @@ services:
 
   insurgency-base:
     image: insurgency-base:${INSURGENCY_BASE_TAG:-latest}
-    depends_on:
-      - steamcmd
     build:
       context: ./base
       args:
@@ -18,8 +16,6 @@ services:
 
   doi-base:
     image: doi-base:${DOI_BASE_TAG:-latest}
-    depends_on:
-      - steamcmd
     build:
       context: ./base
       args:
@@ -28,8 +24,6 @@ services:
 
   insurgency:
     image: insurgency:${INSURGENCY_TAG:-latest}
-    depends_on:
-      - insurgency-base
     build:
       context: ./insurgency
     environment:
@@ -48,8 +42,6 @@ services:
 
   doi:
     image: doi:${DOI_TAG:-latest}
-    depends_on:
-      - doi-base
     build:
       context: ./doi
     environment:
