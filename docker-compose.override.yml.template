@@ -1,0 +1,20 @@
+version: '3.3'
+
+# Override params for services defined on the main docker-compose.yml file
+services:
+  insurgency:
+    environment:
+      APP_SERVER_NAME: 'MyName'
+      APP_SERVER_PASSWORD: 'MyPassword'
+      APP_SERVER_RCONPASSWORD: 'MyrconPassword'
+#      APP_SERVER_PORT: '27018'
+      APP_SERVER_MAXPLAYERS: '128'
+      APP_SERVER_MAP: 'market_coop'
+#   Copy the config.template dir and customize 
+    volumes:
+      - /path/to/insurgency/config/:/tmp/insurgency:ro
+#   Custom Host ports are not tested
+#    ports:
+#      - "27018:27018"
+#      - "27018:27018/udp"
+ 
