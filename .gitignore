@@ -1,4 +1,4 @@
 */config
 */logs
-*/docker-compose.override.*
+docker-compose.override.yml
 env.local
