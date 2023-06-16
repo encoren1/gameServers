@@ -14,7 +14,7 @@ docker-compose build --force-rm base-insurgency
 
 Copy template and edit the server params
 
-´´´cp docker-compose.override.yml.template  docker-compose.override.yml```
+```cp docker-compose.override.yml.template  docker-compose.override.yml```
 
 #### Run Server
 
