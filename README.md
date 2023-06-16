@@ -10,7 +10,7 @@ docker-compose build --force-rm steamcmd && \
 docker-compose build --force-rm base-insurgency
 ```
 
-##### Config
+##### Config (Optional)
 
 Copy template and edit the server params
 
