@@ -1,5 +1,8 @@
 # gameServers
 
+## Docs
+
+https://developer.valvesoftware.com/wiki/SteamCMD#Downloading_SteamCMD
 
 #### INSURGENCY
 
