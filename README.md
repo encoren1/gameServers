@@ -4,19 +4,19 @@
 
 ### Insurgency
 
-#### First time:
+##### First time:
 ```
 docker-compose build --force-rm steamcmd && \
 docker-compose build --force-rm base-insurgency
 ```
 
-#### Config
+##### Config
 
 Copy template and edit the server params
 
 ```cp docker-compose.override.yml.template  docker-compose.override.yml```
 
-#### Run Server
+##### Run Server
 
 Once the base image is created you can create multiple servers with different configurations in seconds
 
