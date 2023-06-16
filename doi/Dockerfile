@@ -1,5 +1,5 @@
 ARG DOI_BASE_TAG=latest
-FROM doi-base:${DOI_BASE_TAG}
+FROM encoren1/gameserver:doi-${DOI_BASE_TAG}
 
 ENV APP_SRCDS_FLAGS ""
 ENV APP_SERVER_PORT 27019

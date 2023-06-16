@@ -2,20 +2,20 @@ version: '3.3'
 
 services:
   steamcmd:
-    image: my-steamcmd:${STEAMCMD_TAG:-latest}
+    image: encoren1/steamcmd:${STEAMCMD_TAG:-latest}
     build:
       context: ./steamcmd
 
-  insurgency-base:
-    image: insurgency-base:${INSURGENCY_BASE_TAG:-latest}
+  base-insurgency:
+    image: encoren1/gameserver:insurgency-${INSURGENCY_BASE_TAG:-latest}
     build:
       context: ./base
       args:
         APPID: 237410
         APPNAME: insurgency
 
-  doi-base:
-    image: doi-base:${DOI_BASE_TAG:-latest}
+  base-doi:
+    image: encoren1/gameserver:doi-${DOI_BASE_TAG:-latest}
     build:
       context: ./base
       args:

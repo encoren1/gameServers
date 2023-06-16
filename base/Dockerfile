@@ -1,5 +1,5 @@
 ARG STEAMCMD_TAG=latest
-FROM my-steamcmd:${STEAMCMD_TAG}
+FROM encoren1/steamcmd:${STEAMCMD_TAG}
 
 ARG STEAM_USER=anonymous
 ARG STEAMCMD_TAG=latest
