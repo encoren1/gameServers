@@ -22,6 +22,14 @@ services:
         APPID: 462310
         APPNAME: doi
 
+  base-sandstorm:
+    image: encoren1/gameserver:sandstorm-${SANDSTORM_BASE_TAG:-latest}
+    build:
+      context: ./base
+      args:
+        APPID: 581330
+        APPNAME: sandstorm
+
   insurgency:
     image: insurgency:${INSURGENCY_TAG:-latest}
     build:
