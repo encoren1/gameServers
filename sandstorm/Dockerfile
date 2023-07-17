@@ -19,4 +19,4 @@ EXPOSE ${APP_SERVER_QUERYPORT}/udp
 #Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping Oilfield?Scenario=Scenario_Refinery_Push_Security \
 #?MaxPlayers=28 -Port=27102 -QueryPort=27131 -log -hostname="My Server"
 #CMD ["/bin/run_server"]
-CMD ["/bin/sleep 1000"]
+CMD ["Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping", "-hostname=Dev_test"]

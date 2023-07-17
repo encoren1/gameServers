@@ -77,8 +77,13 @@ services:
       APP_SERVER_QUERYPORT: '27131'
       APP_SERVER_MAXPLAYERS: '128'
       APP_SERVER_MAP: 'market_coop'
-    #volumes:
-    #  - ./insurgency/config.template/:/tmp/insurgency:ro
+    ports:
+      - "27102:27102"
+      - "27102:27102/udp"
+      - "27131:27131"
+      - "27131:27131/udp"
+    volumes:
+      - ./sandstorm/config.template/:/tmp/sandstorm:ro
     #ports:
     #  - "27018:27018"
     #  - "27018:27018/udp"
