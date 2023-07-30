@@ -18,7 +18,5 @@ EXPOSE ${APP_SERVER_QUERYPORT}
 EXPOSE ${APP_SERVER_QUERYPORT}/udp
 
 COPY run_server_ue4 /bin/run_server_ue4
-RUN /bin/rm -f /bin/run_server \
-	&& ln -sf /bin/run_server_ue4 /bin/run_server 
 
 CMD ["/bin/run_server_ue4"]
