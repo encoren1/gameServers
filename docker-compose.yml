@@ -82,6 +82,8 @@ services:
       - "27102:27102/udp"
       - "27131:27131"
       - "27131:27131/udp"
+      - "7777:7777"
+      - "7777:7777/udp"
     volumes:
       - ./sandstorm/config.template/:/tmp/sandstorm:ro
     #ports:
