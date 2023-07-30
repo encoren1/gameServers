@@ -1,15 +1,16 @@
 ARG SANDSTORM_BASE_TAG=latest
 FROM encoren1/gameserver:sandstorm-${SANDSTORM_BASE_TAG}
 
-ENV APP_SRCDS_FLAGS ""
 ENV APP_SERVER_PORT 27102
 ENV APP_SERVER_QUERYPORT 27131 
-ENV APP_SERVER_MAXPLAYERS 28
-ENV APP_SERVER_MAP market_coop
+ENV APP_SERVER_MAXPLAYERS 10
+ENV APP_SERVER_MAP Oilfield?Scenario=Scenario_Refinery_Push_Security
+
 ENV APP_SERVER_NAME SandstormServer
 ENV APP_SERVER_PASSWORD serverpassword
 ENV APP_SERVER_RCONPASSWORD rconpassword
-ENV USE_SRCDS true
+
+ENV APP_EXTRA_ARGS "-EnableCheats -NoEAC"
 
 EXPOSE ${APP_SERVER_PORT}
 EXPOSE ${APP_SERVER_PORT}/udp
@@ -20,6 +21,4 @@ COPY run_server_ue4 /bin/run_server_ue4
 RUN /bin/rm -f /bin/run_server \
 	&& ln -sf /bin/run_server_ue4 /bin/run_server 
 
-#Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping Oilfield?Scenario=Scenario_Refinery_Push_Security \
-#?MaxPlayers=28 -Port=27102 -QueryPort=27131 -log -hostname="My Server"
 CMD ["/bin/run_server_ue4"]

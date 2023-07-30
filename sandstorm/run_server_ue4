@@ -14,7 +14,4 @@ APPDIR=${HOME}/${APPID}
 
 
 cd ${APPDIR}
-#Command example
-#Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping Oilfield?Scenario=Scenario_Refinery_Push_Security \
-#?MaxPlayers=28 -Port=27102 -QueryPort=27131 -log -hostname="My Server"
-${APPDIR}/srcds_run -game ${APP_GAME_NAME} ${APP_SRCDS_FLAGS} -nohltv ${STEAM_SERVER_TOKEN} +maxplayers ${APP_SERVER_MAXPLAYERS} +map ${APP_SERVER_MAP} -port ${APP_SERVER_PORT} ${APP_EXTRA_ARGS}
+${APPDIR}/Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping ${APP_SERVER_MAP}?MaxPlayers=${APP_SERVER_MAXPLAYERS}?Password=${APP_SERVER_PASSWORD} -hostname=${APP_SERVER_NAME} -Port=${APP_SERVER_PORT} -QueryPort=${APP_SERVER_QUERYPORT} ${APP_EXTRA_ARGS}
