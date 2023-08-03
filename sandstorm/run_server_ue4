@@ -5,7 +5,7 @@ APP_GAME_NAME=${APPNAME}
 APPDIR=${HOME}/${APPID}
 
 #This also need to be adapted 
-#/bin/merge_config
+/bin/merge_config_ue4
 
 #if ! [ "x${APP_SERVER_TOKEN}" = "x" ]; then
 #	echo "sv_setsteamaccount ${APP_SERVER_TOKEN}" > ${APPDIR}/${APP_GAME_NAME}/cfg/autoexec_steamaccount.cfg

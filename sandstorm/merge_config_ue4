@@ -1,0 +1,13 @@
+#/bin/bash
+set -x
+
+
+APP_ROOT=${HOME}/${APPID}
+CFG_FROM=${CFG_FROM:-/tmp/${APPNAME}}
+
+
+if [ -d ${CFG_FROM} ]; then
+  cp -rv ${CFG_FROM}/* ${APP_ROOT}/
+fi
+
+
