@@ -26,7 +26,7 @@ RUN dpkg --add-architecture i386 \
   	&& rm -rf /var/lib/apt/lists/*
 
 USER ${USER_NAME}
-
+WORKDIR ${HOME_DIR}
 #Get code
 RUN mkdir -p ${STEAMCMD_DIR} \
     && curl -s "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar -xzvf - -C ${STEAMCMD_DIR} \

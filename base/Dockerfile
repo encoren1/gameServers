@@ -6,14 +6,15 @@ ARG STEAMCMD_TAG=latest
 ARG STEAM_PASSWORD
 ARG APPID
 ARG APPNAME
+ARG DRY_RUN false
 
 ENV APPID $APPID
 ENV APPNAME $APPNAME
 ENV STEAM_USER $STEAM_USER
 ENV STEAM_PASSWORD $STEAM_PASSWORD
+ENV DRY_RUN $DRY_RUN
 
 COPY install_appid /bin/install_appid
 RUN /bin/install_appid
 
-COPY merge_config /bin/merge_config
-COPY run_server /bin/run_server
+COPY init_scripts/* /bin/
