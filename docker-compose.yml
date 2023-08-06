@@ -82,7 +82,7 @@ services:
       - "27102:27102/udp"
       - "27131:27131"
       - "27131:27131/udp"
-      - "7777:7777"
-      - "7777:7777/udp"
+      - "29099:29099"
+      - "29099:29099/udp"
     volumes:
       - ./sandstorm/config.template/:/tmp/sandstorm:ro
