@@ -21,4 +21,8 @@ if ! [ "x${STEAMCMD_OPTS}" = "x" ]; then
 	STEAMCMD_OPTS="\"${STEAMCMD_OPTS}\""
 fi
 
+if $DRY_RUN; then
+	STEAMCMD=/bin/echo
+fi
+
 ${STEAMCMD} +force_install_dir ${APPDIR} +login ${STEAM_USER} ${STEAM_PASSWORD} +app_update ${APPID} ${STEAMCMD_OPTS} validate +quit

@@ -10,14 +10,11 @@ ENV APP_SERVER_NAME SandstormServer
 ENV APP_SERVER_PASSWORD serverpassword
 ENV APP_SERVER_RCONPASSWORD rconpassword
 
-ENV APP_EXTRA_ARGS "-EnableCheats -NoEAC"
+ENV APP_EXTRA_ARGS ""
 
 EXPOSE ${APP_SERVER_PORT}
 EXPOSE ${APP_SERVER_PORT}/udp
-EXPOSE ${APP_SERVER_QUERYPORT}
 EXPOSE ${APP_SERVER_QUERYPORT}/udp
 
-COPY run_server_ue4 /bin/run_server_ue4
-COPY merge_config_ue4 /bin/merge_config_ue4
-
+#
 CMD ["/bin/run_server_ue4"]
