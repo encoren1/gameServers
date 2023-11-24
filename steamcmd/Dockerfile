@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:bookworm-slim
 ARG STEAM_UID=10000
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -13,7 +13,7 @@ RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get install -y --no-install-recommends --no-install-suggests \
       lib32stdc++6 \
-      lib32gcc1 \
+      lib32gcc-s1 \
       libsdl2-2.0-0:i386 \
       curl \
       locales \
